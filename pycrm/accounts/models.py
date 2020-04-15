@@ -44,7 +44,7 @@ class Order(models.Model):
 
 	date_created = models.DateTimeField(auto_now_add=True, null=True)
 	status = models.CharField(max_length = 200, null=True, choices=STATUS)
-
+	note = models.CharField(max_length= 1000, null=True)
 	customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
 	product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
 

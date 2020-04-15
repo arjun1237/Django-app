@@ -1,5 +1,17 @@
 {% load static %}
 
+<style>
+  .hello-msg{
+    color: #fff;
+    font-size: 18px;
+    margin-right: 20px
+  }
+
+  a.hello-msg:hover{
+    color: light-gray;
+  }
+</style>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a href="{% url 'home' %}">
     <img src="{% static 'images/smirnoff.png' %}" alt="logo" width="35" height="35">
@@ -17,4 +29,7 @@
       </li>
     </ul>
   </div>
+
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  <span><a class="hello-msg logout-button" href="{% url 'logout' %}">Logout</a></span>
 </nav>
